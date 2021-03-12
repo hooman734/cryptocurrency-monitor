@@ -1,5 +1,5 @@
 const Record = (props) => {
-    const { name, price, _24H, _7D, marketCap, volume_24H, circulatingSupply, last7Days } = props;
+    const { id, name, price, _24H, _7D, marketCap, volume_24H, circulatingSupply, last7Days } = props;
 
     const divStyle = {
         display: 'flex',
@@ -23,16 +23,17 @@ const Record = (props) => {
     };
 
     return (
-        <div style={divStyle}>
-            <h3 style={itemStyle}>{ name }</h3>
-            <h4 syle={itemStyle}>{ price } $ </h4>
-            <h4 style={itemStyle}>{ _24H }</h4>
-            <h4 style={itemStyle}>{ _7D }</h4>
-            <h4 style={itemStyle}>{ marketCap }</h4>
-            <h4 style={itemStyle}>{ volume_24H }</h4>
-            <h4 style={itemStyle}>{ circulatingSupply }</h4>
-            <h4 style={itemStyle}>{ last7Days }</h4>
-        </div>
+        <tr>
+            <td>{ id }</td>
+            <td>{ name }</td>
+            <td>{ price } $ </td>
+            <td>{ _24H }</td>
+            <td>{ _7D }</td>
+            <td>{ marketCap }</td>
+            <td>{ volume_24H }</td>
+            <td>{ circulatingSupply }</td>
+            <td>{ last7Days }</td>
+        </tr>
     );
 }
 

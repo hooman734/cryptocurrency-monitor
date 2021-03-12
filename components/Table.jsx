@@ -1,7 +1,8 @@
 import Record from "./Record";
 import {useEffect, useState} from "react";
+import {Table} from 'react-bootstrap';
 
-const Table = () => {
+const TableCP = () => {
 
     const divStyle = {
         // borderRadius: '3rem',
@@ -27,7 +28,8 @@ const Table = () => {
 
     let coins = [];
     if (coinList) {
-        coins = coinList.map(coin => <Record
+        coins = coinList.map((coin, index) => <Record
+            id={index}
             key={coin['id']}
             name={coin['name']}
             price={coin['quote']['USD']['price']}
@@ -43,9 +45,26 @@ const Table = () => {
 
     return (
         <div style={divStyle}>
-            {coins}
+            <Table striped bordered hover variant="dark">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Currency</th>
+                    <th>Price (USD)</th>
+                    <th>24 Hours</th>
+                    <th>7 Days</th>
+                    <th>Market Cap</th>
+                    <th>Volume in 24 Hours</th>
+                    <th>Circulating Supply</th>
+                    <th>Last Update</th>
+                </tr>
+                </thead>
+                <tbody>
+                { coins }
+                </tbody>
+            </Table>
         </div>
     );
 }
 
-export default Table;
+export default TableCP;
