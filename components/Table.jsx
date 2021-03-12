@@ -33,11 +33,11 @@ const TableCP = () => {
             key={coin['id']}
             name={coin['name']}
             price={coin['quote']['USD']['price']}
-            _24H={coin['quote']['USD']['volume-24h']}
+            _24H={coin['quote']['USD']['volume_24h']}
             _7D={coin['quote']['USD']['percent_change_7d']}
             marketCap={coin['quote']['USD']['market_cap']}
             volume_24H={coin['quote']['USD']['volume_24h']}
-            circulatingSupply={coin['circulation_supply']}
+            circulatingSupply={coin['circulating_supply']}
             last7Days={coin['quote']['USD']['last_updated']}/>);
    } else {
         console.log(typeof coinList);

@@ -26,7 +26,7 @@ const Record = (props) => {
         <tr>
             <td>{ id }</td>
             <td>{ name }</td>
-            <td>{ price } $ </td>
+            <td>{ price.toFixed(2) } $ </td>
             <td>{ _24H }</td>
             <td>{ _7D }</td>
             <td>{ marketCap }</td>
